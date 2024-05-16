@@ -75,8 +75,9 @@ public class ParkingLot {
 
         if(vehicle.getVehicleType().equals(VehicleType.TRUCK))
         {
-            if(largeSpotList.remove(parkingSpot))
+            if(largeSpotList.size()!=0)
             {
+                largeSpotList.remove(parkingSpot);
                 System.out.println("We have unparked your "
                         +vehicle.getVehicleType());
                 freeLargeSpots++;

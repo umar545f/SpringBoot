@@ -46,19 +46,16 @@ public class Board {
         }
     }
 
-    public List<Cell> getFreeCells() {
-        List<Cell> freeCells = new ArrayList<>();
-
+    public boolean getFreeCells() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (board[i][j] == null) {
-                    Cell cell = new Cell(i, j);
-                    freeCells.add(cell);
+                    return true;
                 }
             }
         }
 
-        return freeCells;
+        return false;
     }
 
 }

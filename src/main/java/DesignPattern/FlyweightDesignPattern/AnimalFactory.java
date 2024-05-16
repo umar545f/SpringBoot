@@ -14,6 +14,7 @@ public class AnimalFactory {
         }
         animal = new Cat();
         animal.setName(name);
+        hashtable.put(name,animal);
         return animal;
     }
     public static Animal getDog(String name)
@@ -25,6 +26,7 @@ public class AnimalFactory {
         }
         animal = new Dog();
         animal.setName(name);
+        hashtable.put(name,animal);
         return animal;
     }
 }

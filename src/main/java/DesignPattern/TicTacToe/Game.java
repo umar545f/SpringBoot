@@ -39,8 +39,8 @@ public class Game {
         {
             Player playerTurn = players.removeFirst();
             board.printBoard();
-            List<Cell> freeSpaces = board.getFreeCells();
-            if(freeSpaces.isEmpty())
+            boolean freeSpaces = board.getFreeCells();
+            if(!freeSpaces)
             {
                 noWinner = false;
                 continue;

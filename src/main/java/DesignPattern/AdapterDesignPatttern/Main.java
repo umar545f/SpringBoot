@@ -4,39 +4,36 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-class MyObject
-{
-
-    int IntField;
-
-    public int getIntField() {
-        return IntField;
-    }
-
-    public void setIntField(int intField) {
-        IntField = intField;
-    }
-
-    public MyObject(int intField) {
-        IntField = intField;
-    }
-}
 public class Main {
 
 
     public static void main(String[] args) {
-//        WeightMachineAdapter weightMachineAdapter = new
-//                WeightMachineAdapterImpl(new WeightMachineForBabies());
-//        System.out.println(weightMachineAdapter.getWeightInKgs());
+        int[] a = {1,3,2,3,1,3,99,9,5,100,987,16,5,98,5,27,5};
+        int k = 3;
+        int n = a.length;
 
-        List<Integer> list1 = Arrays.asList(1, 2, 3);
-        List<Integer> list2 = Arrays.asList(4, 5, 6);
+        for(int x : a)
+        {
+            System.out.print(x+",");
 
-        Stream<Integer> stream1 = list1.stream();
-        Stream<Integer> stream2 = list2.stream();
+        }
 
-        Stream<Integer> concatStream = Stream.concat(stream1,stream2);
+        Map<Integer,Integer> map = new HashMap<>();
 
-        List<Integer> list = concatStream.collect(Collectors.toList());
+        for(int x : a)
+        {
+            map.put(x,map.getOrDefault(x,0)+1);
+        }
+        int ans = Integer.MIN_VALUE;
+        for(Map.Entry<Integer,Integer> m : map.entrySet())
+        {
+            int v = m.getValue();
+            int key =m.getKey();
+            if(n-v >= k)
+            {
+                ans = Math.max(v,ans);
+            }
+        }
+
     }
 }
