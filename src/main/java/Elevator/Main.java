@@ -5,11 +5,10 @@ public class Main {
         ElevatorSystem elevatorSystem = ElevatorSystem.getInstance();
 
         // Simulate some button presses
-        elevatorSystem.getFloors().get(0).getUpButton().press(); // Floor 1 Up
-        elevatorSystem.getFloors().get(19).getDownButton().press(); // Floor 20 Down
+        elevatorSystem.getFloors().get(4).getUpButton().press(); // Floor 5 Up button
+        elevatorSystem.getFloors().get(22).getDownButton().press(); // Floor 23 Down
 
         // Run the elevator system
         elevatorSystem.run();
-
     }
 }
